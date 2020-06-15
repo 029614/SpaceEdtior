@@ -1,0 +1,261 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resource/Resource.gd" type="Script" id=1]
+
+[node name="Resource" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftPanel" type="Control" parent="Panel"]
+anchor_bottom = 1.0
+margin_right = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CommodityList" type="ItemList" parent="Panel/LeftPanel"]
+visible = false
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 320.0
+margin_bottom = -24.0
+items = [ "+ New Commodity", null, false ]
+
+[node name="GovernmentList" type="ItemList" parent="Panel/LeftPanel"]
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 320.0
+margin_bottom = -24.0
+items = [ "+ New Government", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ListSelectors" type="HBoxContainer" parent="Panel/LeftPanel"]
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 320.0
+margin_bottom = 64.0
+alignment = 1
+
+[node name="Governments" type="Button" parent="Panel/LeftPanel/ListSelectors"]
+margin_left = 1.0
+margin_right = 126.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 125, 0 )
+toggle_mode = true
+pressed = true
+text = "Governments"
+
+[node name="Commodities" type="Button" parent="Panel/LeftPanel/ListSelectors"]
+margin_left = 130.0
+margin_right = 255.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 125, 0 )
+toggle_mode = true
+text = "Commodities"
+
+[node name="RightPanel" type="Control" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 384.0
+
+[node name="Government" type="Control" parent="Panel/RightPanel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Info" type="GridContainer" parent="Panel/RightPanel/Government"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -88.0
+custom_constants/vseparation = 25
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/RightPanel/Government/Info"]
+margin_top = 5.0
+margin_right = 250.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 250, 0 )
+text = "Government Name:"
+align = 2
+
+[node name="GovName" type="LineEdit" parent="Panel/RightPanel/Government/Info"]
+margin_left = 254.0
+margin_right = 504.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 250, 0 )
+
+[node name="Label2" type="Label" parent="Panel/RightPanel/Government/Info"]
+margin_top = 52.0
+margin_right = 250.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 250, 0 )
+text = "Government Color:"
+align = 2
+
+[node name="GovColor" type="ColorPickerButton" parent="Panel/RightPanel/Government/Info"]
+margin_left = 254.0
+margin_top = 49.0
+margin_right = 504.0
+margin_bottom = 69.0
+
+[node name="Label3" type="Label" parent="Panel/RightPanel/Government/Info"]
+margin_top = 212.0
+margin_right = 250.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 250, 0 )
+text = "Government Description:"
+align = 2
+
+[node name="GovDesc" type="TextEdit" parent="Panel/RightPanel/Government/Info"]
+margin_left = 254.0
+margin_top = 94.0
+margin_right = 504.0
+margin_bottom = 344.0
+rect_min_size = Vector2( 250, 250 )
+
+[node name="Submit" type="HBoxContainer" parent="Panel/RightPanel/Government"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 168.0
+margin_top = -48.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GovDelete" type="Button" parent="Panel/RightPanel/Government/Submit"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 0 )
+text = "Delete"
+
+[node name="GovCancel" type="Button" parent="Panel/RightPanel/Government/Submit"]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 0 )
+text = "Cancel"
+
+[node name="GovSubmit" type="Button" parent="Panel/RightPanel/Government/Submit"]
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 0 )
+text = "Submit"
+
+[node name="Commodities" type="Control" parent="Panel/RightPanel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Info" type="GridContainer" parent="Panel/RightPanel/Commodities"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -88.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/RightPanel/Commodities/Info"]
+margin_top = 5.0
+margin_right = 250.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 250, 0 )
+text = "Commodity Name:"
+align = 2
+
+[node name="ComName" type="LineEdit" parent="Panel/RightPanel/Commodities/Info"]
+margin_left = 254.0
+margin_right = 504.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 250, 0 )
+
+[node name="Label2" type="Label" parent="Panel/RightPanel/Commodities/Info"]
+margin_top = 146.0
+margin_right = 250.0
+margin_bottom = 160.0
+text = "Comoodity Description:"
+align = 2
+
+[node name="ComDesc" type="TextEdit" parent="Panel/RightPanel/Commodities/Info"]
+margin_left = 254.0
+margin_top = 28.0
+margin_right = 504.0
+margin_bottom = 278.0
+rect_min_size = Vector2( 0, 250 )
+
+[node name="Submit" type="HBoxContainer" parent="Panel/RightPanel/Commodities"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 168.0
+margin_top = -48.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComDelete" type="Button" parent="Panel/RightPanel/Commodities/Submit"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 0 )
+text = "Delete"
+
+[node name="ComCancel" type="Button" parent="Panel/RightPanel/Commodities/Submit"]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 0 )
+text = "Cancel"
+
+[node name="ComSubmit" type="Button" parent="Panel/RightPanel/Commodities/Submit"]
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 0 )
+text = "Submit"
+
+[node name="Back" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -112.0
+margin_top = 8.0
+margin_right = -12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 100, 0 )
+text = "Back"
+[connection signal="item_selected" from="Panel/LeftPanel/CommodityList" to="." method="_on_CommodityList_item_selected"]
+[connection signal="item_selected" from="Panel/LeftPanel/GovernmentList" to="." method="_on_GovernmentList_item_selected"]
+[connection signal="toggled" from="Panel/LeftPanel/ListSelectors/Governments" to="." method="_on_Governments_toggled"]
+[connection signal="toggled" from="Panel/LeftPanel/ListSelectors/Commodities" to="." method="_on_Commodities_toggled"]
+[connection signal="pressed" from="Panel/RightPanel/Government/Submit/GovDelete" to="." method="_on_GovDelete_pressed"]
+[connection signal="pressed" from="Panel/RightPanel/Government/Submit/GovCancel" to="." method="_on_GovCancel_pressed"]
+[connection signal="pressed" from="Panel/RightPanel/Government/Submit/GovSubmit" to="." method="_on_GovSubmit_pressed"]
+[connection signal="pressed" from="Panel/RightPanel/Commodities/Submit/ComDelete" to="." method="_on_ComDelete_pressed"]
+[connection signal="pressed" from="Panel/RightPanel/Commodities/Submit/ComCancel" to="." method="_on_ComCancel_pressed"]
+[connection signal="pressed" from="Panel/RightPanel/Commodities/Submit/ComSubmit" to="." method="_on_ComSubmit_pressed"]
+[connection signal="pressed" from="Panel/Back" to="." method="_on_Back_pressed"]

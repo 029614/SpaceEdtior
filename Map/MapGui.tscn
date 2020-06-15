@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Map/MapGui.gd" type="Script" id=1]
+
+[node name="MapGui" type="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -192.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConCon" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopCon" type="VBoxContainer" parent="Panel/ConCon"]
+margin_right = 176.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/ConCon/TopCon"]
+margin_right = 176.0
+margin_bottom = 20.0
+
+[node name="ZoomIn" type="Button" parent="Panel/ConCon/TopCon/HBoxContainer"]
+margin_right = 86.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "+ Zoom"
+
+[node name="ZoomOut" type="Button" parent="Panel/ConCon/TopCon/HBoxContainer"]
+margin_left = 90.0
+margin_right = 176.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "- Zoom"
+
+[node name="Edit" type="Button" parent="Panel/ConCon/TopCon"]
+margin_top = 28.0
+margin_right = 176.0
+margin_bottom = 48.0
+text = "Edit System"
+
+[node name="AddSys" type="Button" parent="Panel/ConCon/TopCon"]
+margin_top = 56.0
+margin_right = 176.0
+margin_bottom = 76.0
+text = "Create System"
+
+[node name="DelSys" type="Button" parent="Panel/ConCon/TopCon"]
+margin_top = 84.0
+margin_right = 176.0
+margin_bottom = 104.0
+text = "Delete System"
+
+[node name="AddPath" type="Button" parent="Panel/ConCon/TopCon"]
+visible = false
+margin_top = 112.0
+margin_right = 176.0
+margin_bottom = 132.0
+text = "Create Path"
+
+[node name="DelPath" type="Button" parent="Panel/ConCon/TopCon"]
+visible = false
+margin_top = 112.0
+margin_right = 176.0
+margin_bottom = 132.0
+text = "Delete Path"
+
+[node name="BotCon" type="VBoxContainer" parent="Panel/ConCon"]
+margin_top = 294.0
+margin_right = 176.0
+margin_bottom = 584.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Panel/ConCon/BotCon"]
+margin_top = 270.0
+margin_right = 176.0
+margin_bottom = 290.0
+text = "Back"
+[connection signal="pressed" from="Panel/ConCon/TopCon/HBoxContainer/ZoomIn" to="." method="_on_ZoomIn_pressed"]
+[connection signal="pressed" from="Panel/ConCon/TopCon/HBoxContainer/ZoomOut" to="." method="_on_ZoomOut_pressed"]
+[connection signal="pressed" from="Panel/ConCon/TopCon/Edit" to="." method="_on_Edit_pressed"]
+[connection signal="pressed" from="Panel/ConCon/TopCon/AddSys" to="." method="_on_AddSys_pressed"]
+[connection signal="pressed" from="Panel/ConCon/TopCon/DelSys" to="." method="_on_DelSys_pressed"]
+[connection signal="pressed" from="Panel/ConCon/BotCon/Back" to="." method="_on_Back_pressed"]

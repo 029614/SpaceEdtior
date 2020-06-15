@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Map/Assets/SystemObj.gd" type="Script" id=1]
+[ext_resource path="res://GraphicalAssets/SystemIcon.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.0
+
+[node name="SystemObj" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="SystemIcon" type="Sprite" parent="."]
+scale = Vector2( 0.326062, 0.326062 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Indicator" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.0235294, 1, 0.952941, 0.478431 )
+scale = Vector2( 0.463329, 0.463329 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -128.0
+margin_top = 16.0
+margin_right = 128.0
+margin_bottom = 40.0
+text = "Empty System"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

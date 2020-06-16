@@ -19,6 +19,8 @@ var file_name
 var file_loaded = false
 var loaded = ''
 
+var selected_system
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     Global.Master = self

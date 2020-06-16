@@ -40,4 +40,5 @@ func _on_DelSys_pressed() -> void:
 
 
 func _on_Edit_pressed() -> void:
-    Master.mapC.edit(Master.mapC.selected_system)
+    Master.mapC.pack()
+    get_tree().change_scene("res://System/System.tscn")

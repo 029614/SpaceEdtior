@@ -1,0 +1,243 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GraphicalAssets/Bodies/Asteroid1.png" type="Texture" id=1]
+[ext_resource path="res://GraphicalAssets/Bodies/Planet1.png" type="Texture" id=2]
+[ext_resource path="res://GraphicalAssets/Bodies/CompleteLightsOn.png" type="Texture" id=3]
+[ext_resource path="res://System/SystemGui.gd" type="Script" id=4]
+
+[node name="SystemGui" type="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -192.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -192.0
+
+[node name="ConCon" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SystemProperties" type="VBoxContainer" parent="Panel/ConCon"]
+margin_right = 176.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/ConCon/SystemProperties"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "System Properites"
+align = 1
+
+[node name="Name" type="VBoxContainer" parent="Panel/ConCon/SystemProperties"]
+margin_top = 24.0
+margin_right = 176.0
+margin_bottom = 66.0
+
+[node name="Label" type="Label" parent="Panel/ConCon/SystemProperties/Name"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Name:"
+align = 1
+
+[node name="NameEdit" type="LineEdit" parent="Panel/ConCon/SystemProperties/Name"]
+margin_top = 18.0
+margin_right = 176.0
+margin_bottom = 42.0
+
+[node name="Government" type="VBoxContainer" parent="Panel/ConCon/SystemProperties"]
+margin_top = 76.0
+margin_right = 176.0
+margin_bottom = 114.0
+
+[node name="Label" type="Label" parent="Panel/ConCon/SystemProperties/Government"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Government:"
+align = 1
+
+[node name="GovSelector" type="OptionButton" parent="Panel/ConCon/SystemProperties/Government"]
+margin_top = 18.0
+margin_right = 176.0
+margin_bottom = 38.0
+
+[node name="ActionMenu" type="VBoxContainer" parent="Panel/ConCon"]
+margin_top = 282.0
+margin_right = 176.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/ConCon/ActionMenu"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Actions"
+align = 1
+
+[node name="AddBody" type="Button" parent="Panel/ConCon/ActionMenu"]
+margin_top = 24.0
+margin_right = 176.0
+margin_bottom = 44.0
+text = "+ Add Body"
+
+[node name="DeleteBody" type="Button" parent="Panel/ConCon/ActionMenu"]
+margin_top = 54.0
+margin_right = 176.0
+margin_bottom = 74.0
+text = "- Delete Body"
+
+[node name="BodyActionMenu" type="VBoxContainer" parent="Panel/ConCon"]
+visible = false
+margin_top = 376.0
+margin_right = 176.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/ConCon/BodyActionMenu"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Body Actions"
+align = 1
+
+[node name="AddSatellite" type="Button" parent="Panel/ConCon/BodyActionMenu"]
+margin_top = 24.0
+margin_right = 176.0
+margin_bottom = 44.0
+text = "+ Add Satellite"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeleteSatellite" type="Button" parent="Panel/ConCon/BodyActionMenu"]
+margin_top = 54.0
+margin_right = 176.0
+margin_bottom = 74.0
+text = "- Delete Satellite"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BodyProperties" type="VBoxContainer" parent="Panel/ConCon"]
+visible = false
+margin_top = 396.0
+margin_right = 176.0
+margin_bottom = 558.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/ConCon/BodyProperties"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Body Properites"
+align = 1
+
+[node name="Name" type="VBoxContainer" parent="Panel/ConCon/BodyProperties"]
+margin_top = 24.0
+margin_right = 176.0
+margin_bottom = 66.0
+
+[node name="Label" type="Label" parent="Panel/ConCon/BodyProperties/Name"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Name:"
+align = 1
+
+[node name="NameEdit" type="LineEdit" parent="Panel/ConCon/BodyProperties/Name"]
+margin_top = 18.0
+margin_right = 176.0
+margin_bottom = 42.0
+
+[node name="Government" type="VBoxContainer" parent="Panel/ConCon/BodyProperties"]
+margin_top = 76.0
+margin_right = 176.0
+margin_bottom = 114.0
+
+[node name="Label" type="Label" parent="Panel/ConCon/BodyProperties/Government"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Government:"
+align = 1
+
+[node name="GovSelector" type="OptionButton" parent="Panel/ConCon/BodyProperties/Government"]
+margin_top = 18.0
+margin_right = 176.0
+margin_bottom = 38.0
+
+[node name="Type" type="VBoxContainer" parent="Panel/ConCon/BodyProperties"]
+margin_top = 124.0
+margin_right = 176.0
+margin_bottom = 162.0
+
+[node name="Label" type="Label" parent="Panel/ConCon/BodyProperties/Type"]
+margin_right = 176.0
+margin_bottom = 14.0
+text = "Type:"
+align = 1
+
+[node name="TypeSelector" type="OptionButton" parent="Panel/ConCon/BodyProperties/Type"]
+margin_top = 18.0
+margin_right = 176.0
+margin_bottom = 38.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/ConCon"]
+margin_top = 564.0
+margin_right = 176.0
+margin_bottom = 584.0
+
+[node name="Back" type="Button" parent="Panel/ConCon/HBoxContainer"]
+margin_right = 176.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Back to Map"
+
+[node name="BodyList" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -320.0
+margin_top = 8.0
+margin_right = -192.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BodyList" type="ItemList" parent="BodyList"]
+margin_right = 128.0
+margin_bottom = 560.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+items = [ "Planet", ExtResource( 2 ), false, "Station", ExtResource( 3 ), false, "Asteroid", ExtResource( 1 ), false ]
+fixed_icon_size = Vector2( 32, 32 )
+
+[node name="CancelSelection" type="Button" parent="BodyList"]
+margin_top = 564.0
+margin_right = 128.0
+margin_bottom = 584.0
+size_flags_horizontal = 3
+text = "Cancel"
+[connection signal="pressed" from="Panel/ConCon/ActionMenu/AddBody" to="." method="_on_AddBody_pressed"]
+[connection signal="pressed" from="Panel/ConCon/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="item_selected" from="BodyList/BodyList" to="." method="_on_BodyList_item_selected"]
